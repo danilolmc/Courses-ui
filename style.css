@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;700&display=swap');
+
+
+:root{
+    --primary: #ff3366;
+    --l-white:#fafafb;
+    --white:#fff;
+}
+
+body{
+    background: var(--l-white);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: none;
+    font-family: 'Poppins',sans-serif;
+    box-sizing: border-box;
+}
+
+button,li{
+    cursor: pointer;
+}
+
+body div > header{
+    background:var(--white);
+    border-bottom: 1px solid #ddd;
+}
+
+.menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 4rem;
+}
+
+.menu .left-menu-side{
+    display: flex;
+    column-gap: 3rem;
+}
+
+.menu > div.left-menu-side > span{
+    color: #ff3366;
+    font-weight: 900;
+    font-size: 1.9rem;
+}
+
+ul{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    column-gap: 2rem;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+ul li:nth-child(2){
+    color: #ff3366;
+}
+
+.right-side-header{
+    display: flex;
+    align-items: center;
+    column-gap: 1.6rem;
+}
+
+.right-side-header img{
+    width: 100%;
+    border-radius: 50%;
+    max-width: 22px;
+}
+
+
+
+.right-side-header span{
+    display: grid;
+    place-items: center;
+    
+}
+
+.right-side-header i{
+    font-size: 1.3rem;
+}
+
+header > footer{
+    margin-top: 10vh;
+    padding: 0rem 4rem;
+    width: 100%;
+    text-align: center;
+}
+
+header footer > footer{
+    margin-top: 10vh;
+    display: grid;
+    grid-template-columns: 25% 1fr 25%;
+    align-items: flex-start;
+}
+
+header footer header h1{
+    font-size: 3.5rem;
+    font-weight: 600;
+}
+
+header > footer nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    row-gap: 10vh;
+    flex-direction: column;
+    text-align: center;
+}
+
+header > footer nav ul li{
+    height: 40px;
+    min-width: 50px;
+    border-bottom: 3px solid transparent ;
+}
+
+header > footer nav ul li:nth-child(2){
+    height: 40px;
+    min-width: 50px;
+    border-bottom: 3px solid var(--primary) ;
+}
+
+
+header  footer  .leftCoursesItems{
+    justify-self: start;
+    display: flex;
+    color: #ddd;
+    column-gap: 1.8rem;
+}
+
+header  footer  .leftCoursesItems span:first-child{
+    color: #000;
+    position: relative;
+}   
+
+header  footer  .leftCoursesItems span:first-child::after{
+    content: "";
+    position: absolute;
+    background: #eeeeee;
+    width:1.5px;
+    height: 22px;
+    transform: translateX(15px);
+}   
+
+header  footer  .rightCoursesItems{
+    justify-self: end;
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+}
+
+header  footer  .rightCoursesItems span:first-child{
+    display: flex;
+    column-gap: 0px;
+}
+
+header  footer  .rightCoursesItems span button{
+    font-size: 10px;
+    border: 1px solid #ccc;
+    padding: 5px 20px;
+    min-width: 100px;
+    background: rgb(243, 243, 243);
+}
+
+
+header  footer  .rightCoursesItems span:last-child{
+ 
+    font-size: 14px;
+    color: #ccc;
+}
+
+
+main{
+    display: flex;
+    justify-content: space-around;
+    column-gap: 2rem;
+    padding: 4rem;
+}
+
+figure{
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    background: var(--white);
+    border: 1px solid #eee;
+}
+
+figure img{
+    width: 100%;
+    max-height: 250px;
+}
+
+figcaption{
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+figcaption p{
+    margin: 0rem 0 1rem 0;
+}
+
+figcaption footer{
+    display: flex;
+    font-size: .9rem;
+    margin-top: 2rem;
+    justify-content: space-between;
+}
+
+figcaption footer .lessons,.time{
+    display: flex;
+    column-gap: 1rem;
+}
+
+figcaption footer .lessons i,.time i{
+    color: var(--primary);
+}
