@@ -266,7 +266,7 @@ figcaption p{
 figcaption footer{
     display: flex;
     font-size: .9rem;
-    margin-top: 2rem;
+    margin-top: 3rem;
     justify-content: space-between;
 }
 

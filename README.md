@@ -1,2 +1,5 @@
 # Courses-ui
-UI cloning from a course platform design to practice CSS
+
+Clone de interface construído com HTML e CSS inspirado num layout da Web
+
+![](ui.jpg)
