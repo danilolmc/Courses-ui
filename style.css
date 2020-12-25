@@ -1,301 +1,364 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;700&display=swap");
 
-
-:root{
-    --primary: #ff3366;
-    --l-white:#fafafb;
-    --white:#fff;
+:root {
+  --primary: #ff3366;
+  --l-white: #fafafb;
+  --white: #fff;
 }
 
-body{
-    background: var(--l-white);
+body {
+  background: var(--l-white);
 }
 
-::-webkit-scrollbar{
-    width: 5px;
-    background: #eee;
+::-webkit-scrollbar {
+  width: 5px;
+  background: #eee;
 }
 
-
-::-webkit-scrollbar-thumb{
-    width: 5px;
-    background: var(--primary);
+::-webkit-scrollbar-thumb {
+  width: 5px;
+  background: var(--primary);
 }
 
-*{
-    margin: 0;
-    padding: 0;
-    border: 0;
-    outline: none;
-    font-family: 'Poppins',sans-serif;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
 }
 
-button,li{
-    cursor: pointer;
-    transition: .3s ease-in-out; 
+button,
+li {
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
 }
 
-button:hover,li:hover{
-    filter: brightness(1.05);
+li:hover {
+  filter: opacity(0.4);
 }
 
-body div > header{
-    background:var(--white);
-    border-bottom: 1px solid #ddd;
+body div > header {
+  background: var(--white);
+  border-bottom: 1px solid #ddd;
 }
 
-.menu{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 2rem 4rem;
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 4rem;
+  overflow: hidden;
 }
 
-.menu .left-menu-side{
-    display: flex;
-    column-gap: 3rem;
+.menu .left-menu-side {
+  display: flex;
+  column-gap: 3rem;
+  opacity: 0;
+  transform: translateX(-100px);
+  animation: animationMenuHeader 1s ease-in-out forwards;
 }
 
-.menu > div.left-menu-side > span{
-    color: #ff3366;
-    font-weight: 900;
-    font-size: 1.9rem;
+@keyframes animationMenuHeader {
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
-ul{
-    list-style: none;
-    display: flex;
-    align-items: center;
-    column-gap: 2rem;
-    font-size: 14px;
-    font-weight: 500;
+.menu > div.left-menu-side > span {
+  color: #ff3366;
+  font-weight: 900;
+  font-size: 1.9rem;
 }
 
-ul li:nth-child(2){
-    color: #ff3366;
+ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  column-gap: 2rem;
+  font-size: 14px;
+  font-weight: 500;
 }
 
-.right-side-header{
-    display: flex;
-    align-items: center;
-    column-gap: 1.6rem;
+ul li:nth-child(2) {
+  color: #ff3366;
 }
 
-.right-side-header img{
-    width: 100%;
-    border-radius: 50%;
-    max-width: 22px;
+.right-side-header {
+  display: flex;
+  align-items: center;
+  column-gap: 1.6rem;
+  opacity: 0;
+  transform: translateX(150px);
+  animation: animationMenuHeader 1s forwards;
 }
 
+.right-side-header img {
+  width: 100%;
+  border-radius: 50%;
+  max-width: 22px;
+}
 
+.right-side-header span {
+  display: grid;
+  place-items: center;
+}
 
-.right-side-header span{
+.right-side-header i {
+  font-size: 1.3rem;
+}
+
+header > footer {
+  margin-top: 10vh;
+  padding: 0rem 4rem;
+  width: 100%;
+  text-align: center;
+}
+
+header footer > footer {
+  margin-top: 10vh;
+  display: grid;
+  grid-template-areas: "left center right";
+  grid-template-columns: 25% 1fr 25%;
+  align-items: flex-start;
+}
+
+header footer header h1 {
+  font-size: 3.5rem;
+  font-weight: 600;
+  opacity: 0;
+  transform: translateY(60px);
+  animation: animaTitle 1s ease-in-out forwards;
+}
+
+@keyframes animaTitle {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+footer header,
+footer nav {
+  grid-area: center;
+}
+
+header > footer nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  row-gap: 10vh;
+  text-align: center;
+}
+
+header > footer nav ul li {
+  height: 40px;
+  min-width: 50px;
+  border-bottom: 3px solid transparent;
+}
+
+header > footer nav ul li:nth-child(2) {
+  height: 40px;
+  min-width: 50px;
+  border-bottom: 3px solid var(--primary);
+}
+
+header footer .leftCoursesItems {
+  justify-self: start;
+  display: flex;
+  color: #ddd;
+  column-gap: 1.8rem;
+  grid-area: left;
+}
+
+header footer .leftCoursesItems span:first-child {
+  color: #000;
+  position: relative;
+}
+
+header footer .leftCoursesItems span:first-child::after {
+  content: "";
+  position: absolute;
+  background: #eeeeee;
+  width: 1.5px;
+  height: 22px;
+  transform: translateX(15px);
+}
+
+header footer .rightCoursesItems {
+  justify-self: end;
+  display: flex;
+  align-items: center;
+  column-gap: 1rem;
+  transform: translateY(-3px);
+  grid-area: right;
+}
+
+header footer .rightCoursesItems span:first-child {
+  display: flex;
+  column-gap: 0px;
+}
+
+header footer .rightCoursesItems span button {
+  font-size: 10px;
+  border: 1px solid #ccc;
+  height: 30px;
+  min-width: 100px;
+  background: rgb(243, 243, 243);
+}
+
+header footer .rightCoursesItems span button:hover {
+  background: var(--primary);
+  color: var(--white);
+  border: 1px solid var(--primary);
+}
+
+header footer .rightCoursesItems span:last-child {
+  font-size: 14px;
+  color: #ccc;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  row-gap: 5rem;
+  column-gap: 4rem;
+  padding: 5rem 0rem;
+}
+
+figure {
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  background: var(--white);
+  border: 1px solid #eee;
+  transition: 0.5s ease-in-out;
+  opacity: 0;
+  transform: translateY(100px);
+  animation: animacards 1s ease forwards;
+}
+
+figure:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+figure:nth-child(2) {
+  animation-delay: 0.35s;
+}
+
+figure:nth-child(3) {
+  animation-delay: 0.45s;
+}
+
+@keyframes animacards {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+figure:hover {
+  box-shadow: 0 40px 40px -20px rgba(0, 0, 0, 0.1);
+}
+
+figure img {
+  width: 100%;
+  min-height: 220px;
+  height: 220px;
+}
+
+figcaption {
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+figcaption p {
+  margin: 0rem 0 1rem 0;
+}
+
+figcaption footer {
+  display: flex;
+  font-size: 0.9rem;
+  margin-top: 3rem;
+  justify-content: space-between;
+}
+
+figcaption footer .lessons,
+.time {
+  display: flex;
+  column-gap: 1rem;
+}
+
+figcaption footer .lessons i,
+.time i {
+  color: var(--primary);
+}
+
+.addButton {
+  position: fixed;
+  right: 70px;
+  bottom: 70px;
+  background: var(--primary);
+  width: 50px;
+  height: 50px;
+  z-index: 100;
+  padding: 5px;
+  color: var(--white);
+  font-weight: 500;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  transform: translateY(150px);
+  opacity: 0;
+  animation: addButtonAnimation 1s ease forwards;
+}
+
+.addButton:hover {
+  filter: opacity(0.8);
+  transform: scale(1.05);
+}
+
+@keyframes addButtonAnimation {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 1180px) {
+  header footer > footer {
     display: grid;
-    place-items: center;
-    
-}
-
-.right-side-header i{
-    font-size: 1.3rem;
-}
-
-header > footer{
-    margin-top: 10vh;
-    padding: 0rem 4rem;
-    width: 100%;
-    text-align: center;
-}
-
-header footer > footer{
-    margin-top: 10vh;
-    display: grid;
-    grid-template-areas: "left center right";
+    grid-template-areas:
+      "left right"
+      "bottom bottom";
     grid-template-columns: 25% 1fr 25%;
-    align-items: flex-start;
-}
+    grid-template-rows: 1fr 1fr;
+    row-gap: 2.5rem;
+  }
 
-header footer header h1{
-    font-size: 3.5rem;
-    font-weight: 600;
-}
-
-footer header, footer nav{
-    grid-area: center;
-}
-
-header > footer nav{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    row-gap: 10vh;
-    flex-direction: column;
-    text-align: center;
-}
-
-header > footer nav ul li{
-    height: 40px;
-    min-width: 50px;
-    border-bottom: 3px solid transparent ;
-}
-
-header > footer nav ul li:nth-child(2){
-    height: 40px;
-    min-width: 50px;
-    border-bottom: 3px solid var(--primary) ;
-}
-
-
-header  footer  .leftCoursesItems{
-    justify-self: start;
-    display: flex;
-    color: #ddd;
-    column-gap: 1.8rem;
+  header footer > footer .leftCoursesItems {
+    grid-row: 1;
+    grid-column: 1/3;
     grid-area: left;
-}
+  }
 
-header  footer  .leftCoursesItems span:first-child{
-    color: #000;
-    position: relative;
-}   
-
-header  footer  .leftCoursesItems span:first-child::after{
-    content: "";
-    position: absolute;
-    background: #eeeeee;
-    width:1.5px;
-    height: 22px;
-    transform: translateX(15px);
-}   
-
-header  footer  .rightCoursesItems{
-    justify-self: end;
-    display: flex;
-    align-items: center;
-    column-gap: 1rem;
-    transform: translateY(-3px);
+  header footer > nav {
     grid-area: right;
-}
+    grid-column: 2/4;
+    justify-content: flex-end;
+  }
+  
+  header footer > nav ul li:nth-child(2) {
+      border: 2px solid transparent;
+  }
 
-header  footer  .rightCoursesItems span:first-child{
-    display: flex;
-    column-gap: 0px;
-}
-
-header  footer  .rightCoursesItems span button{
-    font-size: 10px;
-    border: 1px solid #ccc;
-    padding: 5px 20px;
-    min-width: 100px;
-    background: rgb(243, 243, 243);
-}
-
-
-header  footer  .rightCoursesItems span:last-child{
- 
-    font-size: 14px;
-    color: #ccc;
-}
-
-main{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    row-gap: 5rem;
-    column-gap: 4rem;
-    padding: 5rem 0rem;
-}
-
-figure{
-    width: 100%;
-    max-width: 350px;
-    height: auto;
-    background: var(--white);
-    border: 1px solid #eee;
-    transition: .5s ease-in-out;
-    opacity: 0;
-    transform: translateY(100px);
-    animation: animacards 1s ease forwards;
-}
-
-figure:nth-child(1){
-
-    animation-delay: .2s;
-}
-
-figure:nth-child(2){
-
-    animation-delay: .35s;
-}
-
-figure:nth-child(3){
-
-    animation-delay: .45s;
-}
-
-
-@keyframes animacards{
-    to{
-        opacity: 1;
-        transform: translateY(0);
-
-    }
-}
-
-figure:hover{
-    box-shadow: 0 40px 40px -20px rgba(0, 0, 0,.1);
-}
-
-figure img{
-    width: 100%;
-    min-height: 220px;
-    height: 220px;
-}
-
-figcaption{
-    padding: 1rem 1.5rem;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-}
-
-figcaption p{
-    margin: 0rem 0 1rem 0;
-}
-
-figcaption footer{
-    display: flex;
-    font-size: .9rem;
-    margin-top: 3rem;
-    justify-content: space-between;
-}
-
-figcaption footer .lessons,.time{
-    display: flex;
-    column-gap: 1rem;
-}
-
-figcaption footer .lessons i,.time i{
-    color: var(--primary);
-}
-
-.addButton{
-    position: fixed;
-    right: 70px;
-    bottom: 70px;
-    background: var(--primary);
-    width: 50px;
-    height: 50px;
-    z-index: 100;
-    padding: 5px;
-    color: var(--white);
-    font-weight: 500;
-    font-size: 1.5rem;
-    border-radius: 50%;
-    box-shadow: 0 15px 30px rgba(0, 0, 0,.2);
-}
-
-.addButton:hover{
-    filter: opacity(.8);
-    transform: scale(1.05);
+  header footer .rightCoursesItems {
+    justify-self: start;
+    grid-area: bottom;
+  }
 }
