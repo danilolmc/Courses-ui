@@ -354,7 +354,7 @@ figcaption footer .lessons i,
   }
   
   header footer > nav ul li:nth-child(2) {
-      border: 2px solid transparent;
+      border-bottom-color: transparent;
   }
 
   header footer .rightCoursesItems {
